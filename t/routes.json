@@ -1,0 +1,188 @@
+{
+ "content": [
+  "/0970324",
+  "/about",
+  "/aesthetic_prestart",
+  "/aestheticbi13",
+  "/aestheticbi13_gift_tariff",
+  "/block",
+  "/brief",
+  "/certificate",
+  "/consent",
+  "/data-consent",
+  "/form",
+  "/form_highlevel",
+  "/guide",
+  "/highlevel",
+  "/hw",
+  "/intensivebeauty",
+  "/oferta",
+  "/online_webinar",
+  "/part_oferta",
+  "/payment-allway-oc",
+  "/payment-allway",
+  "/payment-method-oc",
+  "/payment-method",
+  "/policy",
+  "/pred12",
+  "/reviews",
+  "/roasting-accounts",
+  "/sale",
+  "/special_newyear",
+  "/successful_payment",
+  "/taplink",
+  "/work_nastya"
+ ],
+ "stubs": [
+  {
+   "path": "/prod",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/prodpay",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/buy_aesthetic_sur",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/buy_aesthetic_oc_sur",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/highlevelpay_basic",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/highlevelpay_standart",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/highlevelpay_premium",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/packagepayspec",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/doplata_package",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/doplata_package2",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/doplata_package3",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/prolong_sec",
+   "mode": "checkout",
+   "to": "https://lk.bi13pro.ru/payments/tariff_lp2xG0/checkout"
+  },
+  {
+   "path": "/aesthetic_book",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/aestheticbi13_gift",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/aestheticbi13_gift_oc",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/buy_aesthetic_sur_oc_spec",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/prolong_special",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/spec_course",
+   "mode": "redirect",
+   "to": "/aesthetic-high-level"
+  },
+  {
+   "path": "/32345",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/923784",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/204",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/intensive",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/buy_frame",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/buy_int",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/buy_post_production",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/gift_frame",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/gift_int",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/gift_post_production",
+   "mode": "redirect",
+   "to": "/school_photo"
+  },
+  {
+   "path": "/pay1",
+   "mode": "checkout",
+   "to": "https://lk.bi13pro.ru/payments/tariff_8GxE95/checkout"
+  },
+  {
+   "path": "/pay2",
+   "mode": "checkout",
+   "to": "https://lk.bi13pro.ru/payments/tariff_jZJApQ/checkout"
+  }
+ ]
+}
