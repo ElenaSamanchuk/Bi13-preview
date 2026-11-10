@@ -31,6 +31,18 @@
 <button class="bi-totop" type="button" aria-label="Вернуться к началу страницы" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 15l6-6 6 6"/></svg></button>
 <script type="application/json" id="bi13-config">{"drag":[],"accordion":false,"zeropopups":[],"page":"/consent"}</script>
 <script src="/Bi13-preview/t/runtime.js" defer></script>
-
+<script data-bi13-widget>
+    if (location.hostname === 'bi13pro.ru' || location.hostname === 'www.bi13pro.ru' || (location.hostname === 'elenasamanchuk.github.io' && location.pathname.startsWith("/Bi13-preview/"))) {
+      const config = {"id":"cmnhpw17i002gckzt84s520iy","key":"cmnhpw17i002hckztimbaretx","api":"https://www.nn99.ru/api","ws":"https://www.nn99.ru","src":"https://www.nn99.ru/widget.js"};
+      const script = document.createElement('script');
+      script.async = true;
+      script.dataset.apiKey = config.key;
+      script.dataset.apiUrl = config.api;
+      script.dataset.widgetId = config.id;
+      script.dataset.wsUrl = config.ws;
+      script.src = config.src;
+      document.head.append(script);
+    }
+  </script>
 </body>
 </html>
