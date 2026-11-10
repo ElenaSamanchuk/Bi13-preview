@@ -35,20 +35,37 @@
       var vh = attr(ab, 'height_vh', n, screens, true);
       var h = attr(ab, 'height', n, screens, true);
       var parts = [ab, ab.querySelector('.t396__carrier'), ab.querySelector('.t396__filter')];
-      var on = valign && !grid && !vh && h;
-      kids.forEach(function (c) { c.style.zoom = ''; });
+      var on = valign && !grid && h;
+      kids.forEach(function (c) {
+        c.style.zoom = '';
+        if (c.hasAttribute('data-bi13-vh-top')) {
+          c.style.removeProperty('top');
+          c.removeAttribute('data-bi13-vh-top');
+        }
+      });
       $$('[data-bi13-lh]', ab).forEach(function (a) { a.style.lineHeight = ''; a.removeAttribute('data-bi13-lh'); });
       if (!on) { parts.forEach(function (p) { if (p) p.style.removeProperty('height'); }); ab.style.removeProperty('--initial-scale-height'); return; }
       var f = parseFloat((a / n).toFixed(3));
-      var hv = Math.floor(parseInt(h, 10) * f) + 'px';
+      var scaledHeight = parseInt(h, 10) * f;
+      var hv = vh ? 'max(' + scaledHeight + 'px, ' + parseFloat(vh) + 'vh)' : Math.floor(scaledHeight) + 'px';
       ab.style.setProperty('--initial-scale-height', hv);
       parts.forEach(function (p) { if (p) p.style.setProperty('height', 'var(--initial-scale-height)'); });
+      // In a full-height scene, the free space centres the scaled grid.
+      var topShift = vh ? Math.max(0, (ab.getBoundingClientRect().height - scaledHeight) / (2 * f)) : 0;
       kids.forEach(function (c) {
         if (!c.querySelector('.tn-molecule, .tn-atom')) return;
         var isG = c.classList.contains('t396__group');
         var cont = attr(c, 'container', n, screens, false, isG);
         if (!cont && isG) cont = 'grid';
-        if (cont === 'grid') c.style.zoom = f;
+        if (cont === 'grid') {
+          c.style.zoom = f;
+          var top = attr(c, 'top', n, screens, false, isG);
+          if (vh && top !== null && attr(c, 'axisy', n, screens, false, isG) === 'top' &&
+              attr(c, 'topunits', n, screens, false, isG) === 'px') {
+            c.style.top = (parseFloat(top) + topShift) + 'px';
+            c.setAttribute('data-bi13-vh-top', '1');
+          }
+        }
       });
       /* в оконных сценах межстрочный округляется до целого px, как на живом сайте */
       $$('.tn-elem[data-elem-type="text"] .tn-atom, .tn-elem[data-elem-type="button"] .tn-atom', ab).forEach(function (a) {
@@ -117,11 +134,12 @@
     scaleAll();
     return true;
   }
+  var popupHash = /^#(?:popup:|zeropopup|promo\d+$)/;
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="#"]');
     if (a) {
       var h = a.getAttribute('href');
-      if (/^#(popup:|zeropopup)/.test(h)) { e.preventDefault(); showPopup(h); return; }
+      if (popupHash.test(h)) { e.preventDefault(); showPopup(h); return; }
       if (/^#closepopup|^#closeallpopup/.test(h)) { e.preventDefault(); closePopup(); return; }
       if (/^#rec\d+$/.test(h)) { var t = d.querySelector(h); if (t) { e.preventDefault(); t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); } return; }
     }
@@ -129,7 +147,7 @@
     if (openPopup && e.target === openPopup.el) closePopup();
   });
   d.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
-  function hashPopup() { if (/^#(popup:|zeropopup)/.test(location.hash)) showPopup(location.hash); }
+  function hashPopup() { if (popupHash.test(location.hash)) showPopup(location.hash); }
 
   /* ---------- перетаскиваемые ленты (вместо scrollbooster и jQuery) ---------- */
   function drag(item) {
